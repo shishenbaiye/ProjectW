@@ -9,8 +9,8 @@ export const gameConfig: Types.Core.GameConfig = {
     backgroundColor: '#9bd4c3',
     scale: {
         mode: Scale.ScaleModes.NONE,
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: 1280,
+        height: 720,
     },
     physics: {
         default: 'arcade',
@@ -42,7 +42,7 @@ function sizeChanged() {
 
             window.game.canvas.setAttribute(
                 "style",
-                `display: block; width: ${window.innerWidth}px; height: ${window.innerHeight}px;`
+                `display: block; width: 1280px; height: 720px;`
             );
         }, 100);
     }

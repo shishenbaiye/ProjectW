@@ -47,9 +47,10 @@ export class PlayerManager extends Singleton{
     private curScene: Phaser.Scene;
     private curPlayer: Player;
     private AllPlayerMap:Map<string,Character> = new Map<string,Character>();
-
+    private physicsGroup:Phaser.Physics.Arcade.Group;
     public init(scene:Phaser.Scene){
         this.curScene = scene;
+        this.physicsGroup = this.curScene.physics.add.group();
     }
 
     public addPlayer(playerid:string,isOwn:boolean = false){
@@ -63,6 +64,7 @@ export class PlayerManager extends Singleton{
             }else{
                 player = new Character(this.curScene,0,0,'otherPlayer');
             }
+            this.physicsGroup.add(player);
             this.AllPlayerMap.set(playerid,player);
         }
     }
