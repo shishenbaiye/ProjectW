@@ -25,8 +25,6 @@ export const gameConfig: Types.Core.GameConfig = {
     callbacks: {
         postBoot: () => {
             sizeChanged();
-            CreateLink.createLink();
-            CreateLink.joinRoom();
         },
     },
     canvasStyle: `display: block; width: 100%; height: 100%;`,

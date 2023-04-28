@@ -5,20 +5,27 @@ export class LoadingScene extends Scene {
         super('loading-scene')
     }
 
-    init(data) { 
+    init(data) {
 
     }
-    
+
     preload() {
         this.load.baseURL = 'assets/';
-        this.load.image('hero', 'sprites/hero1.png');
+        this.load.image('loading', 'loading/default.png');
     }
 
     create(data): void {
-        this.scene.start("game-scene");
+        // this.add.text(100, 100, 'Loading...', { fill: '#0f0' });
+        let centerX = this.cameras.main.width / 2;
+        let centerY = this.cameras.main.height / 2;
+
+        this.add.image(centerX, centerY, 'loading');
+        setTimeout(() => {
+            this.scene.start("game-scene");
+        }, 2000);
     }
 
-    update(time, delta) { 
+    update(time, delta) {
 
     }
 }
